@@ -7,11 +7,12 @@ const App = () => {
   const [resultT1, setResultT1] = useState([]);
   const [inputArrayT1, setInpuArrayT1] = useState([]);
   const [inputTargetT1, setInputTargetT1] = useState('');
-
+  
   function task1(array, numOfTarget) {
-    for (let i=0; i<array.length; i++) {
-      const index = numOfTarget - array[i];
-      const indexPos = array.indexOf(index) - 1;
+    const arrSplit = array.split(',');
+    for (let i=0; i<arrSplit.length - 1; i++) {
+      const index = numOfTarget - arrSplit[i];
+      const indexPos = arrSplit.indexOf(index.toString());
       if (indexPos !== -1 && indexPos !== index) {
         return [i, indexPos];
       }
