@@ -8,21 +8,21 @@ const App = () => {
   const [output, setOutput] = useState('');
 
   function task2(number) {
-
     const arrNew = number.split(''); 
     const arrRev = arrNew.reverse();
-
-    for (let i=0; i<arrRev.length; i++) {
-      // debugger
-      if (arrRev[0] === '0' || isNaN(arrRev[i])) {
-        arrRev.splice(i, 1)
+    
+    if (-2147483648 < number && number < 2147483647) {
+      for (let i=0; i<arrRev.length; i++) {
+        if (arrRev[0] === '0' || isNaN(arrRev[i])) {
+          arrRev.splice(i, 1)
+        }
       }
-    }
-    if (number < 0) {
-      arrRev.unshift('-');
-    }
-    arrRev.join('');
-    return arrRev;
+      if (number < 0) {
+        arrRev.unshift('-');
+      }
+      arrRev.join('');
+      return arrRev;
+    } else return 0;
   }
   
   const handleClick = () => {
