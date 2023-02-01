@@ -13,7 +13,8 @@ const App = () => {
     const arrRev = arrNew.reverse();
 
     for (let i=0; i<arrRev.length; i++) {
-      if (arrRev[i] === '0' || isNaN(arrRev[i])) {
+      // debugger
+      if (arrRev[0] === '0' || isNaN(arrRev[i])) {
         arrRev.splice(i, 1)
       }
     }
